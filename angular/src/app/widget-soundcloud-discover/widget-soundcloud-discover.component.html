@@ -1,0 +1,231 @@
+<div *ngIf="this.data != undefined" class="wrapperDiscover" id="scrollbarDiscover">
+    <div style="background-color: #ff8800; color: #FFFFFF; border: none; font-size: 18px; font-weight: bolder">
+        <img src="../../assets/soundcloud.png" height="25px" width="auto" style="padding-right: 15px; margin-left: 7px">
+        Discover music | Best {{data.music_genre}} in {{data.country}}
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[0].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[0].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[0].title}}</a><br/>
+                    {{data.tracks[0].author}} • {{data.tracks[0].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[1].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[1].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[1].title}}</a><br/>
+                    {{data.tracks[1].author}} • {{data.tracks[1].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[2].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[2].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[2].title}}</a><br/>
+                    {{data.tracks[2].author}} • {{data.tracks[2].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[3].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[3].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[3].title}}</a><br/>
+                    {{data.tracks[3].author}} • {{data.tracks[3].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[4].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[4].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[4].title}}</a><br/>
+                    {{data.tracks[4].author}} • {{data.tracks[4].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[5].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[5].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[5].title}}</a><br/>
+                    {{data.tracks[5].author}} • {{data.tracks[5].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[6].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[6].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[6].title}}</a><br/>
+                    {{data.tracks[6].author}} • {{data.tracks[6].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[7].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[7].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[7].title}}</a><br/>
+                    {{data.tracks[7].author}} • {{data.tracks[7].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[8].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[8].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[8].title}}</a><br/>
+                    {{data.tracks[8].author}} • {{data.tracks[8].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[9].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[9].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[9].title}}</a><br/>
+                    {{data.tracks[9].author}} • {{data.tracks[9].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[10].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[10].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[10].title}}</a><br/>
+                    {{data.tracks[10].author}} • {{data.tracks[10].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[11].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[11].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[11].title}}</a><br/>
+                    {{data.tracks[11].author}} • {{data.tracks[11].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[12].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[12].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[12].title}}</a><br/>
+                    {{data.tracks[12].author}} • {{data.tracks[12].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[13].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[13].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[13].title}}</a><br/>
+                    {{data.tracks[13].author}} • {{data.tracks[13].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <a style="display:block; text-decoration: none" href="{{data.tracks[14].link}}" target="_blank">
+            <div>
+                <div style="float: left">
+                    <img src="{{data.tracks[14].artwork}}" class="rounded" alt="artwork"
+                         style="height: 45px; width: 45px; margin-right: 7px">
+                </div>
+                <div style="margin-left: 40px; color: #5C6670">
+                    <a style="color: #2E2E2E">{{data.tracks[14].title}}</a><br/>
+                    {{data.tracks[14].author}} • {{data.tracks[14].week_plays_count}} plays this week
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

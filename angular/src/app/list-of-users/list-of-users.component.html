@@ -1,0 +1,11 @@
+<h3>List of users</h3>
+
+<div *ngIf="this.data != undefined" class="wrapperUsers">
+    <div *ngFor="let item of data; let index = index">
+        <span>{{data[index].id}}</span>
+        <span> : </span>
+        <span>username : {{data[index].username}} - </span>
+        <span>mail : {{data[index].email}}</span>
+        <a (click)="removeUser($event, item.id)" style="color: red; cursor: pointer"> delete</a>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.tracks {
+    color: black;
+}
+
+.tracks:hover {
+    color: dimgrey ;
+}
+
+.title {
+    color: #ff8800;
+    font-size: 18px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: transparent;
+    position: unset;
+}

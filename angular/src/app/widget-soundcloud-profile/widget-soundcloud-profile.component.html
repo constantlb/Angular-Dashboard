@@ -1,0 +1,8 @@
+<div *ngIf="this.data != undefined" class="card">
+    <img src="{{data.avatar}}" alt="John" style="width:30%; margin-left: 35%">
+    <h1>{{data.user}}</h1>
+    <p class="title">on Soundcloud</p>
+    <p>Followers: {{data.followers_count}} • Follows: {{data.followings_count}}</p>
+    <p>Music plays: {{data.plays_count}}</p>
+    <a href="{{data.link}}" target="_blank" class="buttonSoundcloud">profile</a>
+</div>

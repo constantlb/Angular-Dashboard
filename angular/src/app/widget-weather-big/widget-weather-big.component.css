@@ -1,0 +1,54 @@
+.wrapperBigWeather {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(10px, auto);
+}
+
+.d0 {
+    margin-top: 15px;
+    margin-left: 15px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.d01 {
+    margin-top: 35px;
+    margin-left: 15px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.d011 {
+    margin-top: 55px;
+    margin-left: 15px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.d1 {
+    margin-top: 75px;
+    margin-left: 15px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.d2 {
+    margin-top: 95px;
+    margin-left: 15px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.d3 {
+    margin-top: 115px;
+    margin-left: 15px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.tp {
+    font-size: 30px;
+    grid-column: 2;
+    grid-row: 1;
+}

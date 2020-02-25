@@ -1,0 +1,18 @@
+.wrapperUsers {
+    overflow: auto;
+    height: auto;
+}
+
+.wrapperUsers > div {
+    border: 2px solid #E5E1E1;
+    margin-top: 3px;
+    background-color: #ECE8E8;
+    padding: 8px;
+}
+
+.wrapperUsers > div:hover {
+    border: 2px solid #E5E1E1;
+    margin-top: 3px;
+    background-color: #E5E1E1;
+    padding: 8px;
+}

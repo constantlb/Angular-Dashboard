@@ -1,0 +1,30 @@
+. {
+    background-color: #BDE4F8;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(10px, auto);
+}
+
+.one {
+    font-size: 25px;
+    margin-top: 15px;
+    margin-left: 15px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.descriptionW1 {
+    font-size: 15px;
+    grid-column: 1;
+    grid-row: 3;
+    margin-left: 15px;
+}
+
+.two {
+    grid-column: 3;
+    grid-row: 3;
+}

@@ -1,0 +1,10 @@
+<div *ngIf="this.data != undefined" class="card">
+    <p class="title">Best songs of {{data.user}} on Soundcloud</p>
+    <div>
+        <a href="{{data.tracks[0].link}}" target="_blank" class="tracks">{{data.tracks[0].title}}</a><br />
+        <a href="{{data.tracks[1].link}}" target="_blank" class="tracks">{{data.tracks[1].title}}</a><br />
+        <a href="{{data.tracks[2].link}}" target="_blank" class="tracks">{{data.tracks[2].title}}</a><br />
+        <a href="{{data.tracks[3].link}}" target="_blank" class="tracks">{{data.tracks[3].title}}</a><br />
+        <a href="{{data.tracks[4].link}}" target="_blank" class="tracks">{{data.tracks[4].title}}</a><br />
+    </div>
+</div>

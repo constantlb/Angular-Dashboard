@@ -1,0 +1,537 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav style="background-color: #1a73e8" #drawer class="sidenav" fixedInViewport
+                 [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+                 [mode]="(isHandset$ | async) ? 'over' : 'side'"
+                 [opened]="(isHandset$ | async) === false">
+        <mat-toolbar style="color: #FFFFFF">Menu</mat-toolbar>
+        <mat-nav-list style="color: #FFFFFF">
+            <a mat-list-item (click)="open()">Add widgets</a>
+            <a mat-list-item style="color: #FFFFFF" routerLink="/login" (click)="clearStorage()">Log out</a>
+            <a mat-list-item style="color: #FFFFFF" routerLink="/listofusers">List of users</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="white">
+            <button
+                    type="button"
+                    aria-label="Toggle sidenav"
+                    mat-icon-button
+                    (click)="drawer.toggle()"
+                    *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span>dashboard</span>
+        </mat-toolbar>
+
+        <!-- My Content -->
+
+        <gridster [options]="options" style="background-color: #FFFFFF">
+            <gridster-item [item]="item" *ngFor="let item of dashboard" class="shadow">
+                <div id="btnDelete">
+                    <button class="btn-delete-ic" style="z-index: 9999999" mat-mini-fab (click)="removeItem($event, item)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button class="btn-delete-ic" style="z-index: 9999999" mat-mini-fab (click)="editItem($event, item)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+                <app-parent-dynamic [widget]="item"></app-parent-dynamic>
+            </gridster-item>
+        </gridster>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- #### Modal Widgets #### -->
+
+<ng-template #modalAdd let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Choose a service</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <button (click)="openModalWeather(); modal.close()" mat-button style="width: 100%"
+                class="btn-outline-dark">
+            <mat-icon>wb_sunny</mat-icon>
+            Weather
+        </button>
+        <br/>
+        <button (click)="openModalSoundcloud(); modal.close()" mat-button style="width: 100%" class="btn-outline-dark">
+            <mat-icon>music_note</mat-icon>
+            Soundcloud
+        </button>
+        <br/>
+        <button (click)="openModalNews(); modal.close()" mat-button style="width: 100%" class="btn-outline-dark">
+            <mat-icon>format_align_center</mat-icon>
+            News
+        </button>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<!-- #### Modal Weather #### -->
+
+<ng-template #modalWeather let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Choose a widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <button (click)="openModalWeatherLight(); modal.close()" type="button" class="widgetBtn">
+                Temperature
+            </button>
+        </div>
+        <br/>
+        <div>
+            <button (click)="openModalWeatherBig(); modal.close()" type="button" class="widgetBtn">
+                Detailed weather
+            </button>
+        </div>
+        <br/>
+        <div>
+            <button (click)="openModalWeatherDay(); modal.close()" type="button" class="widgetBtn">
+                Sun day
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<!-- #### Modal Weather Light #### -->
+
+<ng-template #modalWeatherLight let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Configure your widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <input [(ngModel)]="inputLocal.weatherPlaceLight" class="inputWidget" type="text"
+                   placeholder="Localisation">
+        </div>
+        <br/>
+        <div>
+            <input [(ngModel)]="inputLocal.refreshTime" class="inputWidget" type="number" placeholder="Refresh time">
+        </div>
+        <br/>
+        <div>
+            <button type="button" class="widgetBtn" (click)="createWidgetWeatherLight(); modal.close()">
+                Add widget
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<!-- #### Modal Weather Big #### -->
+
+<ng-template #modalWeatherBig let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Configure your widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <input [(ngModel)]="inputLocal.weatherPlaceBig" class="inputWidget" type="text" placeholder="Localisation">
+        </div>
+        <br/>
+        <div>
+            <input [(ngModel)]="inputLocal.refreshTime" class="inputWidget" type="number" placeholder="Refresh time">
+        </div>
+        <br/>
+        <div>
+            <button type="button" class="widgetBtn" (click)="createWidgetWeatherBig(); modal.close()">Add widget
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<!-- #### Modal Weather Day #### -->
+
+<ng-template #modalWeatherDay let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Configure your widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <input [(ngModel)]="inputLocal.weatherPlaceDay" class="inputWidget" type="text" placeholder="Localisation">
+        </div>
+        <br/>
+        <div>
+            <input [(ngModel)]="inputLocal.refreshTime" class="inputWidget" type="number" placeholder="Refresh time">
+        </div>
+        <br/>
+        <div>
+            <button type="button" class="widgetBtn" (click)="createWidgetWeatherDay(); modal.close()">
+                Add widget
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+
+<!-- #### Modal Soundcloud #### -->
+
+<ng-template #modalSoundcloud let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Choose a widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <button (click)="openModalSoundcloudProfile(); modal.close()" type="button" class="widgetBtn">
+                Profile info
+            </button>
+        </div>
+        <br/>
+        <div>
+            <button (click)="openModalSoundcloudDiscover(); modal.close()" type="button" class="widgetBtn">
+                Discover new music
+            </button>
+        </div>
+        <br/>
+        <div>
+            <button (click)="openModalSoundcloudTop(); modal.close()" type="button" class="widgetBtn">
+                Top songs
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<!-- #### Modal Soundcloud Profile #### -->
+
+<ng-template #modalSoundcloudProfile let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Configure your widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <input [(ngModel)]="inputLocal.soundcloudUsername" class="inputWidget" type="text"
+                   placeholder="Profile username">
+        </div>
+        <br/>
+        <div>
+            <input [(ngModel)]="inputLocal.refreshTime" class="inputWidget" type="number" placeholder="Refresh time">
+        </div>
+        <br/>
+        <div>
+            <button type="button" class="widgetBtn" (click)="createWidgetSoundcloudProfile(); modal.close()">
+                Add widget
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<!-- #### Modal Soundcloud Discover #### -->
+
+<ng-template #modalSoundcloudDiscover let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Configure your widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <select [(ngModel)]="inputLocal.soundCloudCountry" class="inputWidget" id="country">
+                <option value="All countries">All countries</option>
+                <option value="Australia">Australia</option>
+                <option value="Canada">Canada</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="USA">USA</option>
+            </select>
+        </div>
+        <br/>
+        <div>
+            <select [(ngModel)]="inputLocal.soundCloudGenre" class="inputWidget" id="genre">
+                <option value="All music genres">All music genres</option>
+                <option value="Alternative Rock">Alternative Rock</option>
+                <option value="Ambient">Ambient</option>
+                <option value="Classical">Classical</option>
+                <option value="Country">Country</option>
+                <option value="Dance & EDM">Dance & EDM</option>
+                <option value="Dancehall">Dancehall</option>
+                <option value="Deep House">Deep House</option>
+                <option value="Disco">Disco</option>
+                <option value="Dubstep">Dubstep</option>
+                <option value="Electronic">Electronic</option>
+                <option value="Folk & Singer-Songwriter">Folk & Singer-Songwriter</option>
+                <option value="Hip-hop & Rap">Hip-hop & Rap</option>
+                <option value="House">House</option>
+                <option value="Indie">Indie</option>
+                <option value="Jazz & Blues">Jazz & Blues</option>
+                <option value="Latin">Latin</option>
+                <option value="Metal">Metal</option>
+                <option value="Piano">Piano</option>
+                <option value="Pop">Pop</option>
+                <option value="R&B & Soul">R&B & Soul</option>
+                <option value="Reggae">Reggae</option>
+                <option value="Reggaeton">Reggaeton</option>
+                <option value="Rock">Rock</option>
+                <option value="Soundtrack">Soundtrack</option>
+                <option value="Techno">Techno</option>
+                <option value="Trance">Trance</option>
+                <option value="Trap">Trap</option>
+                <option value="Trihop">Trihop</option>
+                <option value="World">World</option>
+            </select>
+        </div>
+        <br/>
+        <div>
+            <input [(ngModel)]="inputLocal.refreshTime" class="inputWidget" type="number" placeholder="Refresh time">
+        </div>
+        <br/>
+        <div>
+            <button type="button" class="widgetBtn" (click)="createWidgetSoundcloudDiscover(); modal.close()">
+                Add widget
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<!-- #### Modal Soundcloud Top #### -->
+
+<ng-template #modalSoundcloudTop let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Configure your widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <input [(ngModel)]="inputLocal.soundcloudArtist" class="inputWidget" type="text"
+                   placeholder="An artist or a group">
+        </div>
+        <br/>
+        <div>
+            <input [(ngModel)]="inputLocal.refreshTime" class="inputWidget" type="number" placeholder="Refresh time">
+        </div>
+        <br/>
+        <div>
+            <button type="button" class="widgetBtn" (click)="createWidgetSoundcloudTop(); modal.close()">
+                Add widget
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<!-- #### Modal News #### -->
+
+<ng-template #modalNews let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Choose a widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <button (click)="openModalNewsSubject(); modal.close()" type="button" class="widgetBtn">
+                Subject
+            </button>
+        </div>
+        <br/>
+        <div>
+            <button (click)="openModalNewsRegion(); modal.close()" type="button" class="widgetBtn">
+                Regional news
+            </button>
+        </div>
+        <br/>
+        <div>
+            <button (click)="openModalNewsMedia(); modal.close()" type="button" class="widgetBtn">
+                Media
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<!-- #### Modal News Subject #### -->
+
+<ng-template #modalNewsSubject let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Configure your widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <input [(ngModel)]="inputLocal.newsSubject" class="inputWidget" type="text" placeholder="Enter a subject">
+        </div>
+        <br/>
+        <div>
+            <input [(ngModel)]="inputLocal.refreshTime" class="inputWidget" type="number" placeholder="Refresh time">
+        </div>
+        <br/>
+        <div>
+            <button type="button" class="widgetBtn" (click)="createWidgetNewsSubject(); modal.close()">
+                Add widget
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<!-- #### Modal News Region #### -->
+
+<ng-template #modalNewsRegion let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Configure your widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <select [(ngModel)]="inputLocal.newsRegion" class="inputWidget">
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Austria">Austria</option>
+                <option value="Australia">Australia</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Canada">Canada</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="China">China</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Czechia">Czechia</option>
+                <option value="Germany">Germany</option>
+                <option value="Egypt">Egypt</option>
+                <option value="France">France</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Greece">Greece</option>
+                <option value="Hong Kong">Hong Kong</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Israel">Israel</option>
+                <option value="India">India</option>
+                <option value="Italy">Italy</option>
+                <option value="Japan">Japan</option>
+                <option value="Korea">Korea</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Latvia">Latvia</option>
+                <option value="Morocco">Morocco</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Norway">Norway</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Poland">Poland</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Romania">Romania</option>
+                <option value="Serbia">Serbia</option>
+                <option value="Russia">Russia</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Slovenia">Slovenia</option>
+                <option value="Slovakia">Slovakia</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Taiwan">Taiwan</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="United States">United States</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="South Africa">South Africa</option>
+            </select>
+        </div>
+        <br/>
+        <div class="modal-body" style="justifyContent: center">
+            <div>
+                <select [(ngModel)]="inputLocal.newsRegionCat" class="inputWidget">
+                    <option value="Business">Business</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="General">General</option>
+                    <option value="Health">Health</option>
+                    <option value="Science">Science</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Technology">Technology</option>
+                </select>
+            </div>
+        </div>
+            <div>
+                <input [(ngModel)]="inputLocal.refreshTime" class="inputWidget" type="number"
+                       placeholder="Refresh time">
+            </div>
+            <br/>
+            <div>
+                <button type="button" class="widgetBtn" (click)="createWidgetNewsRegion(); modal.close()">
+                    Add widget
+                </button>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+        </div>
+</ng-template>
+
+<!-- #### Modal News Media #### -->
+
+<ng-template #modalNewsMedia let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Configure your widget</h4>
+    </div>
+    <div class="modal-body" style="justifyContent: center">
+        <div>
+            <select [(ngModel)]="inputLocal.newsMedia" class="inputWidget">
+                <option value="ABC News">ABC News</option>
+                <option value="Al Jazeera English">Al Jazeera English</option>
+                <option value="BBC News">BBC News</option>
+                <option value="BBC Sport">BBC Sport</option>
+                <option value="Bloomberg">Bloomberg</option>
+                <option value="Business Insider">Business Insider</option>
+                <option value="Buzzfeed">Buzzfeed</option>
+                <option value="CBS News">CBS News</option>
+                <option value="CNN">CNN</option>
+                <option value="Engadget">Engadget</option>
+                <option value="Entertainment Weekly">Entertainment Weekly</option>
+                <option value="ESPN">ESPN</option>
+                <option value="Fox News">Fox News</option>
+                <option value="Hacker News">Hacker News</option>
+                <option value="IGN">IGN</option>
+                <option value="Mashable">Mashable</option>
+                <option value="National Geographic">National Geographic</option>
+                <option value="Reddit">Reddit</option>
+                <option value="TechCrunch">TechCrunch</option>
+                <option value="The Huffington Post">The Huffington Post</option>
+                <option value="The New York Times">The New York Times</option>
+                <option value="The Verge">The Verge</option>
+                <option value="The Wall Street Journal">The Wall Street Journal</option>
+                <option value="Wired">Wired</option>
+            </select>
+        </div>
+        <br/>
+        <div>
+            <input [(ngModel)]="inputLocal.refreshTime" class="inputWidget" type="number" placeholder="Refresh time">
+        </div>
+        <br/>
+        <div>
+            <button type="button" class="widgetBtn" (click)="createWidgetNewsMedia(); modal.close()">
+                Add widget
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>

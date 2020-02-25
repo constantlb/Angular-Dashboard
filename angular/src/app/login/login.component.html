@@ -1,0 +1,61 @@
+<div class="form">
+    <div class="form-toggle"></div>
+    <div class="form-panel one">
+        <div class="form-header">
+            <h1>Account Login</h1>
+        </div>
+        <div class="form-content">
+            <form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input [(ngModel)]="loginV.email" type="email" id="emailLogin" name="email" required="required"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input [(ngModel)]="loginV.password" type="password" id="passwordLogin" name="password"
+                           required="required"/>
+                </div>
+                <div class="form-group">
+                    <button (click)="SendLogin()" type="submit">Log In</button>
+                </div>
+                <div>
+                    <p style="text-align: center">___________</p>
+                </div>
+                <div class="form-group">
+                    <a href="https://github.com/login/oauth/authorize?client_id=48c9fbba490367c3bf7d">Log in with Github</a>
+                </div>
+                <div class="form-group">
+                    <a class="form-recovery">Register by clicking in the blue right banner</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="form-panel two">
+        <div class="form-header">
+            <h1>Register Account</h1>
+        </div>
+        <div class="form-content">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input [(ngModel)]="register.name" type="text" id="username" name="username" required="required"/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input [(ngModel)]="register.password" type="password" id="password" name="password"
+                       required="required"/>
+            </div>
+            <div class="form-group">
+                <label for="cpassword">Confirm Password</label>
+                <input [(ngModel)]="register.password_conf" type="password" id="cpassword" name="cpassword"
+                       required="required"/>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input [(ngModel)]="register.email" type="email" id="email" name="email" required="required"/>
+            </div>
+            <div class="form-group">
+                <button (click)="Register()" type="submit">Register</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,272 @@
+<!--Container-->
+<div *ngIf="this.data != undefined" class="container" style="overflow: auto; height: 100%; background: #283747" id="scrollbarMedia">
+    <!--Start code-->
+    <div class="row">
+        <div class="col-12 pb-5">
+            <div>
+                <h5 style="margin-top: 12px; color: #FFFFFF">{{data.source}}</h5>
+            </div>
+            <!--SECTION START-->
+            <section class="row">
+                <!--Start box news-->
+                <div class="col-12 pt-2 pl-md-1 mb-3 mb-lg-4">
+                    <div class="row">
+                        <!--news box 1-->
+                        <div class="col-6 pb-1 pr-1 pt-0">
+                            <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="position-relative">
+                                    <!--thumbnail img-->
+                                    <div class="ratio_right-cover-2 image-wrapper">
+                                        <a>
+                                            <img style="object-fit: cover; height: 151px; width: 100%"
+                                                 src="{{data.articles[0].image}}" alt="image of the article">
+                                        </a>
+                                    </div>
+                                    <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                        <!-- category -->
+                                        <a class="p-1 badge badge-primary rounded-0">
+                                            {{data.articles[0].author}}
+                                        </a>
+                                        <!--title-->
+                                        <a href="{{data.articles[0].url}}" target="_blank">
+                                            <h6 class="h6 text-white my-1">{{data.articles[0].title}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--news box 2-->
+                        <div class="col-6 pb-1 pl-1 pt-0">
+                            <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="position-relative">
+                                    <!--thumbnail img-->
+                                    <div class="ratio_right-cover-2 image-wrapper">
+                                        <a>
+                                            <img style="object-fit: cover; height: 151px; width: 100%"
+                                                 src="{{data.articles[1].image}}" alt="image of the article">
+                                        </a>
+                                    </div>
+                                    <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                        <!-- category -->
+                                        <a class="p-1 badge badge-primary rounded-0">
+                                            {{data.articles[1].author}}
+                                        </a>
+                                        <!--title-->
+                                        <a href="{{data.articles[1].url}}" target="_blank">
+                                            <h6 class="h6 text-white my-1">{{data.articles[1].title}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--news box 3 -->
+                        <div class="col-6 pb-1 pr-1 pt-1">
+                            <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="position-relative">
+                                    <!--thumbnail img-->
+                                    <div class="ratio_right-cover-2 image-wrapper">
+                                        <a>
+                                            <img style="object-fit: cover; height: 151px; width: 100%"
+                                                 src="{{data.articles[2].image}}" alt="image of the article">
+                                        </a>
+                                    </div>
+                                    <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                        <!-- category -->
+                                        <a class="p-1 badge badge-primary rounded-0">
+                                            {{data.articles[2].author}}
+                                        </a>
+                                        <!--title-->
+                                        <a href="{{data.articles[2].url}}" target="_blank">
+                                            <h6 class="h6 text-white my-1">{{data.articles[2].title}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--news box 4 -->
+                        <div class="col-6 pb-1 pl-1 pt-1">
+                            <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="position-relative">
+                                    <!--thumbnail img-->
+                                    <div class="ratio_right-cover-2 image-wrapper">
+                                        <a>
+                                            <img style="object-fit: cover; height: 151px; width: 100%"
+                                                 src="{{data.articles[3].image}}" alt="image of the article">
+                                        </a>
+                                    </div>
+                                    <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                        <!-- category -->
+                                        <a class="p-1 badge badge-primary rounded-0">
+                                            {{data.articles[3].author}}
+                                        </a>
+                                        <!--title-->
+                                        <a href="{{data.articles[3].url}}" target="_blank">
+                                            <h6 class="h6 text-white my-1">{{data.articles[3].title}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--news box 5 -->
+                        <div class="col-6 pb-1 pr-1 pt-1">
+                            <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="position-relative">
+                                    <!--thumbnail img-->
+                                    <div class="ratio_right-cover-2 image-wrapper">
+                                        <a>
+                                            <img style="object-fit: cover; height: 151px; width: 100%"
+                                                 src="{{data.articles[4].image}}" alt="image of the article">
+                                        </a>
+                                    </div>
+                                    <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                        <!-- category -->
+                                        <a class="p-1 badge badge-primary rounded-0">
+                                            {{data.articles[4].author}}
+                                        </a>
+                                        <!--title-->
+                                        <a href="{{data.articles[4].url}}" target="_blank">
+                                            <h6 class="h6 text-white my-1">{{data.articles[4].title}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--news box 6 -->
+                        <div class="col-6 pb-1 pl-1 pt-1">
+                            <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="position-relative">
+                                    <!--thumbnail img-->
+                                    <div class="ratio_right-cover-2 image-wrapper">
+                                        <a>
+                                            <img style="object-fit: cover; height: 151px; width: 100%"
+                                                 src="{{data.articles[5].image}}" alt="image of the article">
+                                        </a>
+                                    </div>
+                                    <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                        <!-- category -->
+                                        <a class="p-1 badge badge-primary rounded-0">
+                                            {{data.articles[5].author}}
+                                        </a>
+                                        <!--title-->
+                                        <a href="{{data.articles[5].url}}" target="_blank">
+                                            <h6 class="h6 text-white my-1">{{data.articles[5].title}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--news box 7 -->
+                        <div class="col-6 pb-1 pr-1 pt-1">
+                            <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="position-relative">
+                                    <!--thumbnail img-->
+                                    <div class="ratio_right-cover-2 image-wrapper">
+                                        <a>
+                                            <img style="object-fit: cover; height: 151px; width: 100%"
+                                                 src="{{data.articles[6].image}}" alt="image of the article">
+                                        </a>
+                                    </div>
+                                    <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                        <!-- category -->
+                                        <a class="p-1 badge badge-primary rounded-0">
+                                            {{data.articles[6].author}}
+                                        </a>
+                                        <!--title-->
+                                        <a href="{{data.articles[6].url}}" target="_blank">
+                                            <h6 class="h6 text-white my-1">{{data.articles[6].title}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--news box 8 -->
+                        <div class="col-6 pb-1 pl-1 pt-1">
+                            <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="position-relative">
+                                    <!--thumbnail img-->
+                                    <div class="ratio_right-cover-2 image-wrapper">
+                                        <a>
+                                            <img style="object-fit: cover; height: 151px; width: 100%"
+                                                 src="{{data.articles[7].image}}" alt="image of the article">
+                                        </a>
+                                    </div>
+                                    <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                        <!-- category -->
+                                        <a class="p-1 badge badge-primary rounded-0">
+                                            {{data.articles[7].author}}
+                                        </a>
+                                        <!--title-->
+                                        <a href="{{data.articles[7].url}}" target="_blank">
+                                            <h6 class="h6 text-white my-1">{{data.articles[7].title}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--news box 9 -->
+                        <div class="col-6 pb-1 pr-1 pt-1">
+                            <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="position-relative">
+                                    <!--thumbnail img-->
+                                    <div class="ratio_right-cover-2 image-wrapper">
+                                        <a>
+                                            <img style="object-fit: cover; height: 151px; width: 100%"
+                                                 src="{{data.articles[8].image}}" alt="image of the article">
+                                        </a>
+                                    </div>
+                                    <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                        <!-- category -->
+                                        <a class="p-1 badge badge-primary rounded-0">
+                                            {{data.articles[8].author}}
+                                        </a>
+                                        <!--title-->
+                                        <a href="{{data.articles[8].url}}" target="_blank">
+                                            <h6 class="h6 text-white my-1">{{data.articles[8].title}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--news box 10 -->
+                        <div class="col-6 pb-1 pl-1 pt-1">
+                            <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="position-relative">
+                                    <!--thumbnail img-->
+                                    <div class="ratio_right-cover-2 image-wrapper">
+                                        <a>
+                                            <img style="object-fit: cover; height: 151px; width: 100%"
+                                                 src="{{data.articles[9].image}}" alt="image of the article">
+                                        </a>
+                                    </div>
+                                    <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                        <!-- category -->
+                                        <a class="p-1 badge badge-primary rounded-0">
+                                            {{data.articles[9].author}}
+                                        </a>
+                                        <!--title-->
+                                        <a href="{{data.articles[9].url}}" target="_blank">
+                                            <h6 class="h6 text-white my-1">{{data.articles[9].title}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end news box-->
+                    </div>
+                </div>
+                <!--End box news-->
+            </section>
+            <!--END SECTION-->
+        </div>
+    </div>
+    <!--end code-->
+</div>

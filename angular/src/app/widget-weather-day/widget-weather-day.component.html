@@ -1,0 +1,15 @@
+<div *ngIf="this.data != undefined" style="width: 100%; height: 100%; background: #F5E352" class="wrapperDay">
+
+    <div style="border: none; font-size: 18px; font-weight: bolder; padding: 3px; margin-left: 5px">
+        Today in {{data.city}}
+    </div>
+
+    <div>
+        <div style="float: left"><img src="../../assets/sunrise.png"></div>
+        <div style="margin-left: 60px; margin-top: 10px">Sunrise: {{data.sunrise}}</div>
+    </div>
+    <div>
+        <div style="float: left"><img src="../../assets/sunset.png"></div>
+        <div style="margin-left: 60px; margin-top: 10px">Sunset: {{data.sunset}}</div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+version: "3"
+services:
+
+  dashboard:
+    build: ./angular
+    container_name: angular_dashboard
+    depends_on:
+      - api
+    ports:
+      - 8080:4200
+    restart: 'no'
+
+  api:
+    build: ./python
+    container_name: python_api
+    depends_on:
+      - rethink
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api.entrypoints=http,https"
+      - "traefik.http.routers.api.rule=Host(`api.$DOMAIN_NAME`)"
+      - "traefik.http.routers.api.service=api"
+      - "traefik.http.services.api.loadbalancer.server.Port=5000"
+      #- "traefik.http.routers.api.entrypoints=https"
+      #- "traefik.http.routers.api.tls.certresolver=myhttpchallenge"
+    ports:
+      - 5000:5000
+    restart: 'no'
+
+  rethink:
+    image: rethinkdb:latest
+    container_name: rethinkdb
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rethink.entrypoints=http,https"
+      - "traefik.http.routers.rethink.rule=Host(`rethink.$DOMAIN_NAME`)"
+      - "traefik.http.routers.rethink.service=rethink"
+      - "traefik.http.services.rethink.loadbalancer.server.Port=8080"
+      #- "traefik.http.routers.rethink.entrypoints=https"
+      #- "traefik.http.routers.rethink.tls.certresolver=myhttpchallenge"
+    ports:
+      - 8081:8080
+      - 28015:28015
+      - 29015:29015
+    restart: 'no'
+    volumes:
+      - rethinkdb:/data:rw
+
+  traefik:
+    image: traefik:v2.0
+    container_name: traefik_proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.entrypoints=http,https"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.$DOMAIN_NAME`)"
+      - "traefik.http.routers.traefik.service=traefik"
+      - "traefik.http.services.traefik.loadbalancer.server.Port=8082"
+      #- "traefik.http.routers.traefik.entrypoints=https"
+      #- "traefik.http.routers.traefik.tls.certresolver=myhttpchallenge"
+    ports:
+      - 80:80
+      - 443:443
+      - 8082:8082
+    restart: 'no'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - $PWD/traefik:/etc/traefik:ro
+      #- $PWD/letsencrypt/acme.json:/letsencrypt/acme.json:rw
+
+volumes:
+  rethinkdb:

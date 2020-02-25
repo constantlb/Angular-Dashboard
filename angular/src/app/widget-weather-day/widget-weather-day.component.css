@@ -1,0 +1,15 @@
+.wrapperDay {
+    overflow: auto;
+    height: 335px;
+    max-width: 940px;
+}
+
+.wrapperDay > div {
+    margin-top: 3px;
+    padding: 10px;
+}
+
+.wrapperDay > div:hover {
+    margin-top: 3px;
+    padding: 10px;
+}
