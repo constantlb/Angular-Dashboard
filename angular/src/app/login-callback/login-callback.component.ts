@@ -10,8 +10,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
     styleUrls: ['./login-callback.component.css']
 })
 export class LoginCallbackComponent implements OnInit {
-    code = '';
-    accessToken = '';
+    code;
+    accessToken;
 
     constructor(private currentRoute: ActivatedRoute, private router: Router, private http: HttpClient) {
     }

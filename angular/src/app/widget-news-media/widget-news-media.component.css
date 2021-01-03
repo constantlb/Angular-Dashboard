@@ -33,7 +33,7 @@
 
 #scrollbarMedia::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: linear-gradient(left, #96A6BF, #63738C);
+    background: linear-gradient(to left, #96A6BF, #63738C);
     box-shadow: inset 0 0 1px 1px #5C6670;
 }
 
@@ -44,5 +44,5 @@
 }
 
 #scrollbarMedia::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(left, #8391A6, #536175);
+    background: linear-gradient(to left, #8391A6, #536175);
 }

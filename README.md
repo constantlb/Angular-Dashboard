@@ -1,18 +1,22 @@
 # Dashboard
 
-Dashboard is a useful tool to use on daily basis.
-
-
+Dashboard is a useful tool to use on daily basis.\
+Epitech Project done in Epitech Montpellier in 2019.\
+FrontEnd by [**Cloubie**](https://github.com/constantlb) \
+BackEnd by [**Azzerial**](https://github.com/Azzerial)
 
 ## Getting started
 
 #### ❖ Prerequisites
 
-This application runs under [**Docker**](https://www.docker.com/). In order to be able to run it, you must first have *Docker* installed on your machine. If you already have it, you can skip this part and directly go to the next section.
+This application runs under [**Docker**](https://www.docker.com/). In order to be able to run it, you must first have *
+Docker* installed on your machine. If you already have it, you can skip this part and directly go to the next section.
 
-In the case you don't have *Docker* installed on your computer, be sure to install it properly before continuing. Here are the official installation guides:
+In the case you don't have *Docker* installed on your computer, be sure to install it properly before continuing. Here
+are the official installation guides:
 
-| **OS**                                                       | **Official link**                                       |
+| **OS**                                                       | **Official
+link**                                       |
 | :----------------------------------------------------------- | :------------------------------------------------------ |
 | <img src="https://img.icons8.com/metro/52/000000/mac-os.png" width="32px"> Mac | https://docs.docker.com/docker-for-mac/install/         |
 | <img src="https://img.icons8.com/ios-glyphs/60/000000/windows-client.png" width="32px"> Windows | https://docs.docker.com/docker-for-windows/install/     |
@@ -23,11 +27,10 @@ In the case you don't have *Docker* installed on your computer, be sure to insta
 
 Once *Docker* is installed, download and install [**`docker-compose`**](https://docs.docker.com/compose/install/).
 
-
-
 #### ❖ Configuration
 
-The domain name used for running the application can be changed in the **`.env`** file located at the root of the project.
+The domain name used for running the application can be changed in the **`.env`** file located at the root of the
+project.
 
 ```properties
 # By default the application will run on localhost.
@@ -38,8 +41,6 @@ DOMAIN_NAME=localhost
 
 > example: `DOMAIN_NAME=domain.com`
 
-
-
 #### ❖ Run the application
 
 To start the application, type the following command:
@@ -48,21 +49,19 @@ To start the application, type the following command:
 docker-compose up --build
 ```
 
+Open a new tab on your browser : http://localhost:8080/login
+
 > Yeah, that's right. Only one command!
-
-
 
 ## Features
 
 Dashboard is fully customizable. You can add as many widgets as you want, and even organize it as you wish.
 
-
-
 #### ❖ Services and widgets
 
-​	⬥ **Weather**
+​ ⬥ **Weather**
 
-​		⬦ **Temperature**
+​ ⬦ **Temperature**
 
 > **Type** `widget-weather-light`
 
@@ -70,7 +69,7 @@ Dashboard is fully customizable. You can add as many widgets as you want, and ev
 | ---------------------------- | -------------------- |
 | `View a city's temperature.` | `City name (string)` |
 
-​		⬦ **Forecast**
+​ ⬦ **Forecast**
 
 > **Type** `widget-weather-big`
 
@@ -78,7 +77,7 @@ Dashboard is fully customizable. You can add as many widgets as you want, and ev
 | --------------------------------------------------------- | -------------------- |
 | `View a city's forecast (pressure, humidity, wind, ...).` | `City name (string)` |
 
-​		⬦ **Daytime**
+​ ⬦ **Daytime**
 
 > **Type** `widget-weather-day`
 
@@ -86,11 +85,9 @@ Dashboard is fully customizable. You can add as many widgets as you want, and ev
 | --------------------------------------------------- | -------------------- |
 | `View a city's daytime hours (sunrise and sunset).` | `City name (string)` |
 
+​ ⬥ **SoundCloud**
 
-
-​	⬥ **SoundCloud**
-
-​		⬦ **Profile**
+​ ⬦ **Profile**
 
 > **Type** `widget-soundcloud-profile`
 
@@ -98,7 +95,7 @@ Dashboard is fully customizable. You can add as many widgets as you want, and ev
 | --------------------------- | -------------------------- |
 | `View an artist's profile.` | `Artist username (string)` |
 
-​		⬦ **Top 15**
+​ ⬦ **Top 15**
 
 > **Type** `widget-soundcloud-discover`
 
@@ -106,7 +103,7 @@ Dashboard is fully customizable. You can add as many widgets as you want, and ev
 | ------------------------------------------------------------ | -------------------------------------------------- |
 | `View the top 15 songs of a music genre in a specific country.` | `Country name (string)`,<br>`Music genre (string)` |
 
-​		⬦ **Artist popular tracks**
+​ ⬦ **Artist popular tracks**
 
 > **Type** `widget-soundcloud-top`
 
@@ -114,11 +111,9 @@ Dashboard is fully customizable. You can add as many widgets as you want, and ev
 | --------------------------------------- | -------------------------- |
 | `View an artist's most popular tracks.` | `Artist username (string)` |
 
+​ ⬥ **News**
 
-
-​	⬥ **News**
-
-​		⬦ **Topic**
+​ ⬦ **Topic**
 
 > **Type** `widget-news-subject`
 
@@ -126,7 +121,7 @@ Dashboard is fully customizable. You can add as many widgets as you want, and ev
 | --------------------------------------------------------- | ----------------------- |
 | `View the latest articles written about a certain topic.` | `Search topic (string)` |
 
-​		⬦ **Region**
+​ ⬦ **Region**
 
 > **Type** `widget-news-region`
 
@@ -134,7 +129,7 @@ Dashboard is fully customizable. You can add as many widgets as you want, and ev
 | ------------------------------------------------------------ | ---------------------------------------------------- |
 | `View the latest articles from a certain region and of a specific category.` | `Country name (string)`,<br>`Category name (string)` |
 
-​		⬦ **Media source**
+​ ⬦ **Media source**
 
 > **Type** `widget-news-media`
 
@@ -142,30 +137,24 @@ Dashboard is fully customizable. You can add as many widgets as you want, and ev
 | ------------------------------------------------------ | ---------------------------- |
 | `View the latest articles of a specific media source.` | `Media source name (string)` |
 
-
-
 ## API
 
 #### ❖ Routes
 
-​	⬥ **Misc**
+​ ⬥ **Misc**
 
 | Method | Route  | Description        |
 | ------ | ------ | ------------------ |
 | GET    | /about | get the about json |
 
-
-
-​	⬥ **Services**
+​ ⬥ **Services**
 
 | Method | Route                 | Description           |
 | ------ | --------------------- | --------------------- |
 | GET    | /services             | get the services list |
 | GET    | /services/:service_id | get a service         |
 
-
-
-​	⬥ **Users**
+​ ⬥ **Users**
 
 | Method | Route                                   | Description                                      |
 | ------ | --------------------------------------- | ------------------------------------------------ |
@@ -219,14 +208,12 @@ Dashboard is fully customizable. You can add as many widgets as you want, and ev
 
 
 
-​	⬥ **Widgets**
+​ ⬥ **Widgets**
 
 | Method | Route               | Description          |
 | ------ | ------------------- | -------------------- |
 | GET    | /widgets            | get the widgets list |
 | GET    | /widgets/:widget_id | get a widget         |
-
-
 
 #### ❖ Models
 
@@ -236,18 +223,21 @@ Also, note that all response is wrapped the following way:
 
 ```json
 {
-    'status': 200             // http status code
-    'message': 'OK',          // http status message
-    'success': true,          // was the request successful?
-    'data': /* mixed */       // requested data
+  'status': 200
+  // http status code
+  'message': 'OK',
+  // http status message
+  'success': true,
+  // was the request successful?
+  'data':
+  /* mixed */
+  // requested data
 }
 ```
 
 Each JSON from bellow will be found in the 'data' field.
 
-
-
-​	⬥ **Misc**
+​ ⬥ **Misc**
 
  		⬦ **About**
 
@@ -273,34 +263,39 @@ Each JSON from bellow will be found in the 'data' field.
 }
 ```
 
-
-
-​	⬥ **Services**
+​ ⬥ **Services**
 
  		⬦ **Service**
 
 ```json
 {
-    'id': /* integer */,
-    'name': /* string */,
-    'connections': [{
-        'name': /* string */
-    }]
+  'id':
+  /* integer */,
+  'name':
+  /* string */,
+  'connections': [
+    {
+      'name':
+      /* string */
+    }
+  ]
 }
 ```
 
-
-
-​	⬥ **Users**
+​ ⬥ **Users**
 
  		⬦ **User**
 
 ```json
 {
-    'id': /* integer */,
-    'username': /* string */,
-    'email': /* string */,
-    'creation_date': /* integer */
+  'id':
+  /* integer */,
+  'username':
+  /* string */,
+  'email':
+  /* string */,
+  'creation_date':
+  /* integer */
 }
 ```
 
@@ -308,15 +303,19 @@ Each JSON from bellow will be found in the 'data' field.
 
 ```json
 {
-    'id': /* integer */,
-    'type': /* string */,
-    'params': [
-        /* integer || string */
-    ],
-    'position': {
-        'x': /* integer */,
-        'y': /* integer */
-    }
+  'id':
+  /* integer */,
+  'type':
+  /* string */,
+  'params': [
+    /* integer || string */
+  ],
+  'position': {
+    'x':
+    /* integer */,
+    'y':
+    /* integer */
+  }
 }
 ```
 
@@ -324,54 +323,60 @@ Each JSON from bellow will be found in the 'data' field.
 
 ```json
 {
-    'id': /* integer */,
-    'model': /* string */,
-    'data': /* mixed */
+  'id':
+  /* integer */,
+  'model':
+  /* string */,
+  'data':
+  /* mixed */
 }
 ```
 
-
-
-​	⬥ **Widgets**
+​ ⬥ **Widgets**
 
  		⬦ **Widget**
 
  ```json
 {
-    'id': /* integer */,
-    'service_id': /* integer */
-    'name': /* string */,
-    'description': /* string */,
-    'type': /* string */,
-    'params': [{
-        'name': /* string */,
-        'type': /* integer || string */
-    }]
+  'id':
+  /* integer */,
+  'service_id': /* integer */
+  'name'
+  :
+  /* string */,
+  'description':
+  /* string */,
+  'type':
+  /* string */,
+  'params': [
+    {
+      'name':
+      /* string */,
+      'type':
+      /* integer || string */
+    }
+  ]
 }
  ```
-
-
-
-
 
 ## Technologies & Dependencies
 
 Dashboard is split into 3 main services:
 
-⬥ **Dashboard** made in [**Angular**](https://github.com/topics/angular) `v8`
+⬥ **Dashboard** made in [**Angular**](https://github.com/topics/angular) `v11`
 
-​	⬦ [**angular-gridster2**](https://github.com/tiberiuzuld/angular-gridster2) `v8.2.0` 
+​ ⬦ [**angular-gridster2**](https://github.com/tiberiuzuld/angular-gridster2) `v11.0.1`
 
-​	⬦ [**bootstrap**](https://github.com/twbs/bootstrap) `v4.3.1` 
+​ ⬦ [**bootstrap**](https://github.com/twbs/bootstrap) `v4.5.3`
 
 ⬥ **API** made in [**Python**](https://github.com/topics/python) `v2.7`
 
-​	⬦ [**flask**](https://github.com/pallets/flask) `v1.1.1` 
+​ ⬦ [**flask**](https://github.com/pallets/flask) `v1.1.1`
 
-​	⬦ [**flask-cors**](https://github.com/corydolphin/flask-cors) `v3.0.8` 
+​ ⬦ [**flask-cors**](https://github.com/corydolphin/flask-cors) `v3.0.8`
 
-​	⬦ [**rethinkdb**](https://github.com/rethinkdb/rethinkdb-python) `v2.4.4` 
+​ ⬦ [**rethinkdb**](https://github.com/rethinkdb/rethinkdb-python) `v2.4.4`
 
-​	⬦ [**requests**](https://github.com/psf/requests) `v2.22.0` 
+​ ⬦ [**requests**](https://github.com/psf/requests) `v2.22.0`
 
 ⬥ **Database** using [**Rethinkdb**](https://github.com/rethinkdb/rethinkdb) `v2.3`

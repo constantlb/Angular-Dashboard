@@ -1,10 +1,10 @@
-FROM node:12.13-alpine
+FROM node:14.15.2-alpine
 
 ADD . /app
 WORKDIR /app
 
+RUN npm install -g @angular/cli@11.0.5
 RUN npm install
-RUN npm install -g @angular/cli@7.3.9
 
 EXPOSE 4200
 
